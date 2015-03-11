@@ -1,5 +1,5 @@
-Ruby gem to access Hubs3D
-=========================
+Ruby gem to access 3DHub's API
+==============================
 
 Ye be warned: this has not been tested in production.
 
