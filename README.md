@@ -24,3 +24,25 @@ cart = Hubs3D::Cart.new
 cart << model
 cart.url # => "http://3dhubs.com/…"
 ```
+
+Development
+-----------
+
+For local development, please install the `bundler` gem then:
+
+```sh
+$ bundle
+```
+
+To launch specs:
+
+```sh
+$ rake
+```
+
+
+License
+-------
+
+Created by Sunny Ripert for [Cults.](https://cults3d.com),
+licensed under the MIT License.
