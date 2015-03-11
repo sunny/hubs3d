@@ -1,7 +1,7 @@
 require "minitest/autorun"
 require "webmock/minitest"
 
-require "hubs3d"
+require "hubs3d/configuration"
 
 Hubs3D.configure do |c|
   c.oauth_key = "test_key"
