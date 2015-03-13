@@ -46,3 +46,9 @@ License
 
 Created by Sunny Ripert for [Cults.](https://cults3d.com),
 licensed under the MIT License.
+
+
+See also
+--------
+
+- https://bitbucket.org/bram_rongen/hubs3d_api_example
