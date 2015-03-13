@@ -27,9 +27,8 @@ describe Hubs3D::Cart do
     end
 
     it "calls the API" do
-      # params = { items: { modelId: 42, quantity: 1 } }
-      returned = { url: "http://example" }
-      Hubs3D::API.stub :post, "/cart", returned do
+      returned = { "url" => "http://example" }
+      Hubs3D::API.stub :post, returned do
         cart.url.must_equal "http://example"
       end
     end

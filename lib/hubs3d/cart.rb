@@ -13,7 +13,7 @@ module Hubs3D
     end
 
     def url(options = {})
-      @url ||= post["url"]
+      @url ||= post.fetch("url")
     end
 
 

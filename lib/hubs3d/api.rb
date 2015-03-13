@@ -5,7 +5,7 @@ require "oauth"
 # require 'net-http-spy'
 # Net::HTTP.http_logger_options = {:verbose => true}
 
-require "hubs3d/api"
+require "hubs3d/configuration"
 
 module Hubs3D
   module API
