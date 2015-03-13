@@ -1,5 +1,5 @@
 require "json"
-require "oauth" # https://github.com/oauth-xx/oauth-ruby
+require "oauth"
 
 # To help debugging:
 # require 'net-http-spy'

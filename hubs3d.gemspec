@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rest-client"
+  s.add_dependency "oauth"
 
-  # s.add_development_dependency "webmock"
+  s.add_development_dependency "webmock"
   s.add_development_dependency "rake"
 end
