@@ -1,14 +1,10 @@
 Ruby gem to access 3DHub's API
 ==============================
 
-Ye be warned: this has not been tested in production.
-
 Example usage
 -------------
 
 ```rb
-require "hubs3d"
-
 Hubs3D.configure do |c|
   c.oauth_key = "YOUR_API_KEY_HERE"
   c.oauth_secret = "YOUR_API_SECRET_HERE"
@@ -25,14 +21,18 @@ cart << model
 cart.url # => "http://3dhubs.com/…"
 ```
 
+Install
+-------
+
+Add the following line to your Gemfile if you are using the `bundler` gem:
+
+```rb
+gem "hubs3d"
+```
+
+
 Development
 -----------
-
-For local development, please install the `bundler` gem then:
-
-```sh
-$ bundle
-```
 
 To launch specs:
 
