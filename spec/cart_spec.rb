@@ -7,8 +7,8 @@ describe Hubs3D::Cart do
                                        currency: "EUR",
                                        uuid: 5,
                                        mandatory: true) }
-  let(:cart) { Hubs3D::Cart.new(designer_tip: designer_tip,
-                                third_party_id: "foo0") }
+  let(:cart) { described_class.new(designer_tip: designer_tip,
+                                   third_party_id: "foo0") }
   let(:item) { double(:item, id: 42) }
 
   describe "#designer_tip" do

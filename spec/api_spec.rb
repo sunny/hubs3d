@@ -14,7 +14,7 @@ describe Hubs3D::API do
               })
         .to_return(status: 200, body: '{ "answer": 42 }')
 
-      post = Hubs3D::API.post("/some/path", foo: "bar")
+      post = described_class.post("/some/path", foo: "bar")
       expect(post).to eq("answer" => 42)
     end
   end

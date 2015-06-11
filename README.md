@@ -37,7 +37,7 @@ Development
 To launch specs:
 
 ```sh
-$ rake
+$ bundle exec rspec
 ```
 
 
