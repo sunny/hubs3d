@@ -1,5 +1,4 @@
-require "minitest/autorun"
-require "webmock/minitest"
+require "webmock/rspec"
 
 require "hubs3d/configuration"
 

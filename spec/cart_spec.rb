@@ -1,13 +1,31 @@
 require "spec_helper"
 require "hubs3d/cart"
+require "hubs3d/tip"
 
 describe Hubs3D::Cart do
-  let(:cart) { Hubs3D::Cart.new }
-  let(:item) { Minitest::Mock.new }
+  let(:designer_tip) { Hubs3D::Tip.new(amount: 42_00,
+                                       currency: "EUR",
+                                       uuid: 5,
+                                       mandatory: true) }
+  let(:cart) { Hubs3D::Cart.new(designer_tip: designer_tip,
+                                third_party_id: "foo0") }
+  let(:item) { double(:item, id: 42) }
+
+  describe "#designer_tip" do
+    it "returns the designer_tip" do
+      expect(cart.designer_tip).to eq(designer_tip)
+    end
+  end
+
+  describe "#third_party_id" do
+    it "returns the third_party_id" do
+      expect(cart.third_party_id).to eq("foo0")
+    end
+  end
 
   describe "#items" do
     it "defaults to empty" do
-      cart.items.empty?.must_equal true
+      expect(cart.items.empty?).to eq(true)
     end
   end
 
@@ -15,22 +33,40 @@ describe Hubs3D::Cart do
     it "adds items" do
       cart << item
       cart << item
-      cart.items.size.must_equal 2
+      expect(cart.items.size).to eq(2)
     end
   end
 
   describe "#url" do
+    let(:api_result) { { "url" => "http://example" } }
+
     before do
+      allow(Hubs3D::API).to receive(:post) { api_result }
       cart << item
-      item.expect :id, 42
-      item.expect :id, 42
     end
 
-    it "calls the API" do
-      returned = { "url" => "http://example" }
-      Hubs3D::API.stub :post, returned do
-        cart.url.must_equal "http://example"
-      end
+    it "calls the API with the correct args" do
+      cart.url
+      args = {
+        items: {
+          42 => {
+            modelId: 42,
+            quantity: 1,
+          },
+        },
+        designer_tip: {
+          amount: 42_00,
+          currency: "EUR",
+          uuid: 5,
+          mandatory: true
+        },
+        third_party_id: "foo0",
+      }
+      expect(Hubs3D::API).to have_received(:post).with("/cart", args)
+    end
+
+    it "returns the url from the API" do
+      expect(cart.url).to eq("http://example")
     end
   end
 end

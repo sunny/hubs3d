@@ -15,7 +15,7 @@ describe Hubs3D::API do
         .to_return(status: 200, body: '{ "answer": 42 }')
 
       post = Hubs3D::API.post("/some/path", foo: "bar")
-      post.must_equal({ "answer" => 42 })
+      expect(post).to eq("answer" => 42)
     end
   end
 end
