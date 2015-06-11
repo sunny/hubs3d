@@ -3,11 +3,16 @@ require "hubs3d/api"
 
 module Hubs3D
   class Model
-    attr_accessor :id, :name, :path
-    def initialize(id: nil, name: nil, path: nil)
+    attr_reader :name, :path, :attachments
+
+    def initialize(id: nil,
+                   name: nil,
+                   path: nil,
+                   attachments: nil)
       @id = id
       @name = name
       @path = path
+      @attachments = attachments
     end
 
     def id
@@ -22,7 +27,9 @@ module Hubs3D
     end
 
     def post
-      API.post("/model", file: base_64, fileName: name)
+      API.post("/model", file: base_64,
+                         fileName: name,
+                         attachments: attachments)
     end
   end
 end
