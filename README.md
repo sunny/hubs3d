@@ -51,4 +51,5 @@ licensed under the MIT License.
 See also
 --------
 
+- http://docs.3dhubs.apiary.io/
 - https://bitbucket.org/bram_rongen/hubs3d_api_example
