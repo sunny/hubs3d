@@ -27,7 +27,7 @@ Install
 Add the following line to your Gemfile if you are using the `bundler` gem:
 
 ```rb
-gem "hubs3d"
+gem "hubs3d", :git => 'https://github.com/YouMagine/hubs3d'
 ```
 
 
@@ -44,8 +44,10 @@ $ bundle exec rspec
 License
 -------
 
-Created by Sunny Ripert for [Cults.](https://cults3d.com),
+Originally created by Sunny Ripert for [Cults.](https://cults3d.com),
 licensed under the MIT License.
+
+Forked by Martijn Versluis for [YouMagine](https://www.youmagine.com).
 
 
 See also
