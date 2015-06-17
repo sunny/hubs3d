@@ -38,15 +38,16 @@ describe Hubs3D::Cart do
   end
 
   describe "#url" do
-    let(:api_result) { { "url" => "http://example" } }
-
-    before do
-      allow(Hubs3D::API).to receive(:post) { api_result }
+    it "returns the url from the API" do
+      allow(cart).to receive(:post).and_return({"url" => "http://example"})
       cart << item
-    end
 
+      expect(cart.url).to eq("http://example")
+    end
+  end
+
+  describe "#post" do
     it "calls the API with the correct args" do
-      cart.url
       args = {
         items: {
           42 => {
@@ -62,11 +63,11 @@ describe Hubs3D::Cart do
         },
         third_party_id: "foo0",
       }
-      expect(Hubs3D::API).to have_received(:post).with("/cart", args)
-    end
 
-    it "returns the url from the API" do
-      expect(cart.url).to eq("http://example")
+      cart << item
+      expect(Hubs3D::API).to receive(:post).with("/cart", args)
+
+      cart.send(:post)
     end
   end
 end
