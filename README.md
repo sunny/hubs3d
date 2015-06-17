@@ -18,7 +18,7 @@ model.id # => 42
 # Create a cart and get its url
 cart = Hubs3D::Cart.new
 cart << model
-cart.url # => "http://3dhubs.com/…"
+cart.url # => "https://www.3dhubs.com/…"
 ```
 
 Install

@@ -4,11 +4,12 @@ module Hubs3D
   class Configuration
     attr_accessor :oauth_key
     attr_accessor :oauth_secret
+
     attr_accessor :api_site
     attr_accessor :api_path
 
     def initialize
-      @api_site = "http://test.3dhubs.com"
+      @api_site = "https://www.3dhubs.com"
       @api_path = "/api/v1"
     end
   end

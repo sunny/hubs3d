@@ -3,7 +3,7 @@ require "spec_helper"
 describe Hubs3D::API do
   describe ".post" do
     it "posts" do
-      stub_request(:post, "http://test.3dhubs.com/api/v1/some/path")
+      stub_request(:post, "https://www.3dhubs.com/api/v1/some/path")
         .with(body: { "foo" => "bar" },
               headers: {
                 'Accept' => 'application/json',
