@@ -16,7 +16,11 @@ module Hubs3D
     end
 
     def id
-      @id ||= post["modelId"].to_i
+      @id ||= begin
+        result = post
+        fail "Expected #{result.inspect} to have modelId" if !result["modelId"]
+        result["modelId"].to_i
+      end
     end
 
 
@@ -27,9 +31,11 @@ module Hubs3D
     end
 
     def post
-      API.post("/model", file: base_64,
-                         fileName: name,
-                         attachments: attachments)
+      post = API.post("/model", file: base_64,
+                                fileName: name,
+                                attachments: attachments)
+      fail "Expected Hash but was #{post.inspect}" unless post.kind_of?(Hash)
+      post
     end
   end
 end
