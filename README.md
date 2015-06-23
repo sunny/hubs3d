@@ -1,5 +1,5 @@
-Ruby gem to access 3DHub's API
-==============================
+Ruby gem to access 3D Hubs' API
+===============================
 
 Example usage
 -------------
