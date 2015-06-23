@@ -27,7 +27,7 @@ Install
 Add the following line to your Gemfile if you are using the `bundler` gem:
 
 ```rb
-gem "hubs3d", :git => 'https://github.com/YouMagine/hubs3d'
+gem 'hubs3d', github: 'YouMagine/hubs3d'
 ```
 
 
