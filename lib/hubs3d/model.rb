@@ -26,16 +26,17 @@ module Hubs3D
 
     private
 
-    def base_64
+    def base_64_file
       Base64.encode64 open(@path, 'r') { |f| f.read }
     end
 
     def post
-      post = API.post("/model", file: base_64,
-                                fileName: name,
-                                attachments: attachments)
-      fail "Expected Hash but was #{post.inspect}" unless post.kind_of?(Hash)
-      post
+      params = {
+        file: base_64_file,
+        fileName: name,
+      }
+      params[:attachments] = attachments if attachments
+      API.post("/model", params)
     end
   end
 end
