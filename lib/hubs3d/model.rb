@@ -27,9 +27,13 @@ module Hubs3D
     end
 
     def post
-      API.post("/model", file: base_64,
-                         fileName: name,
-                         attachments: attachments)
+      params = {
+        file: base_64,
+        fileName: name,
+        attachments: attachments
+      }
+
+      API.post("/model", params.keep_if { |k, v| v.present? })
     end
   end
 end
