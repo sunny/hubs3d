@@ -1,19 +1,22 @@
 module Hubs3D
   class Tip
-    attr_reader :amount, :currency, :uuid, :mandatory
+    attr_reader :amount_cents, :currency, :uuid, :mandatory
 
-    def initialize(amount: nil,
+    def initialize(amount_cents: nil,
                    currency: nil,
                    uuid: nil,
                    mandatory: nil)
-      @amount = amount
+      @amount_cents = amount_cents
       @currency = currency
       @uuid = uuid
       @mandatory = mandatory
     end
 
     def to_h
-      { amount: amount, currency: currency, uuid: uuid, mandatory: mandatory }
+      { amount: amount_cents,
+        currency: currency,
+        uuid: uuid,
+        mandatory: mandatory }
     end
   end
 end

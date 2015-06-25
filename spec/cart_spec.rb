@@ -3,9 +3,9 @@ require "hubs3d/cart"
 require "hubs3d/tip"
 
 describe Hubs3D::Cart do
-  let(:designer_tip) { Hubs3D::Tip.new(amount: 42_00,
+  let(:designer_tip) { Hubs3D::Tip.new(amount_cents: 42_00,
                                        currency: "EUR",
-                                       uuid: 5,
+                                       uuid: "5-42-42",
                                        mandatory: true) }
   let(:cart) { described_class.new(designer_tip: designer_tip,
                                    third_party_id: "foo0") }
@@ -57,7 +57,7 @@ describe Hubs3D::Cart do
         designer_tip: {
           amount: 42_00,
           currency: "EUR",
-          uuid: 5,
+          uuid: "5-42-42",
           mandatory: true
         },
         third_party_id: "foo0",
