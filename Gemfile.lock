@@ -3,7 +3,6 @@ PATH
   specs:
     hubs3d (1.0.0)
       oauth
-      rest-client
 
 GEM
   remote: https://rubygems.org/
@@ -12,18 +11,8 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
-    domain_name (0.5.24)
-      unf (>= 0.0.5, < 1.0.0)
-    http-cookie (1.0.2)
-      domain_name (~> 0.5)
-    mime-types (2.6.1)
-    netrc (0.10.3)
     oauth (0.4.7)
     rake (10.4.2)
-    rest-client (1.8.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
@@ -38,9 +27,6 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     safe_yaml (1.0.4)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.1)
     webmock (1.20.4)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
