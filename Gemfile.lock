@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hubs3d (1.0.0)
+    hubs3d (1.0.1)
       oauth
 
 GEM
