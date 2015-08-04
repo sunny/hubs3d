@@ -19,12 +19,11 @@ module Hubs3D
       response = token.post(Hubs3D.configuration.api_path + path,
                             params,
                             "Accept" => "application/json")
-      body = JSON.parse(response.body)
 
       if response.code == "200"
-        body
+        JSON.parse(response.body)
       else
-        fail Error, "API #{response.code}: #{body.join(" ")}"
+        fail Error, "API #{response.code}: #{response.body}"
       end
     end
   end
