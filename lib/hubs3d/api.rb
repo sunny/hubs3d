@@ -23,7 +23,8 @@ module Hubs3D
       if response.code == "200"
         JSON.parse(response.body)
       else
-        fail Error, "API #{response.code}: #{response.body}"
+        fail Error, "3D Hubs API Error (Code: #{response.code}): " \
+                    "#{response.body}"
       end
     end
   end
