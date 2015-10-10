@@ -1,4 +1,4 @@
 module Hubs3D
-  class Error < RuntimeError
+  class Error < ::StandardError
   end
 end
