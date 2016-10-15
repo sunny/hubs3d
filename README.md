@@ -45,9 +45,10 @@ cart = Hubs3D::Cart.new(
 Install
 -------
 
-Add the following line to your Gemfile if you are using the `bundler` gem:
+Add the following lines to your Gemfile if you are using the `bundler` gem:
 
 ```rb
+# Client for 3D Hub's API
 gem "hubs3d"
 ```
 
