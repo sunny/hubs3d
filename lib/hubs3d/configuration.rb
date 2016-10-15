@@ -1,5 +1,3 @@
-require "hubs3d/api"
-
 module Hubs3D
   class Configuration
     attr_accessor :oauth_key

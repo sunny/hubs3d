@@ -1,5 +1,3 @@
-require "hubs3d/api"
-
 module Hubs3D
   class Cart
     attr_reader :items, :designer_tip, :third_party_id
