@@ -11,7 +11,7 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
-    oauth (0.4.7)
+    oauth (0.5.4)
     rake (10.4.2)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
