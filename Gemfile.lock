@@ -12,7 +12,7 @@ GEM
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     oauth (0.4.7)
-    rake (10.4.2)
+    rake (12.3.3)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
