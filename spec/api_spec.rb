@@ -10,7 +10,6 @@ describe Hubs3D::API do
                 'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
                 'Authorization' => /\AOAuth/,
                 'Content-Type' => 'application/x-www-form-urlencoded',
-                'User-Agent' => 'OAuth gem v0.4.7',
               })
         .to_return(status: 200, body: '{ "answer": 42 }')
 
